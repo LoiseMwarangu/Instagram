@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'insta',
         'USER': 'loise',
-    'PASSWORD':'32123772',
+        'PASSWORD':'32123772',
     }
 }
 

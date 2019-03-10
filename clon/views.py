@@ -18,6 +18,7 @@ def index(request):
     all_users = Profile.objects.all()
     next = request.GET.get('next')
     if next: return redirect(next)
+    return render(request, 'internal/home.html',  {"all_images": all_images}, {"all_users":all_users})
 
 
 def login(request):

@@ -1,0 +1,5 @@
+
+
+Welcome to instagram {{name}}
+
+First, please confirm your email address.If you are ever locked out,this will help us get you back in

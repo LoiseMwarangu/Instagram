@@ -11,5 +11,5 @@ urlpatterns=[
     url('^$',views.index, name='index'),
     url(r'^login/$',views.login,name ='login'),
     url(r'^logout/$',views.index,{'next_page': 'accounts:login'}, name='logout'),
-
+    
 ]

@@ -1,0 +1,38 @@
+{%extends "registration/base.html"%} {% load bootstrap3 %} {% block content %}
+<div class="container">
+    <div class="logincont">
+        <div class="loginform">
+            {% if form.errors %}
+            <p > Password or Username is incorrect </p>
+            {% endif %}
+        
+
+            <div  class="panel panel-default">
+                     
+                    
+
+                    <h1><strong>You Are Signed In</strong></h1>
+                    <div style="margin-top: 10%" class="panel-heading">
+                        <a href="/accounts/register/" class="btn btn-primary btn-sm pull-right">Sign Up</a>
+                    </div>
+                    
+                    <div style="margin-top: 20%;" class="panel-heading">
+                        <a href="/accounts/login/" class="btn btn-primary btn-sm pull-right">Sign In</a>
+                    </div>
+
+
+                 </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+           
+</div>
+
+{% endblock %}
+
+

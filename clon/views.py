@@ -9,17 +9,21 @@ from .models import Profile, Image
 from django.contrib.auth.models import User
 from . import models
 from annoying.decorators import ajax_request
-
 from django.core.mail import send_mail
-
 from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/accounts/login/')
+def index(request):
+    all_images = Image.objects.all()
+    all_users = Profile.objects.all()
+    next = request.GET.get('next')
+    if next: return redirect(next)
 
-#login page view
-def logout(request):
-    return render(request, 'registration/logout.html')
 
 def login(request):
     return render(request, 'registration/login.html')
+
+def logout(request):
+    return render(request, 'registration/logout.html')
     
 

@@ -16,12 +16,11 @@ from django.contrib.auth.decorators import login_required
 
 
 #Login page view function
-def login(request):
-    return render(request, 'registration/login.html')
-    
+def register(request):
+    return render(request, 'registration/registration.html')    
     
 #Home page view function
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/login/')
 def index(request):
     all_images = Image.objects.all()
     all_users = Profile.objects.all()
@@ -29,14 +28,14 @@ def index(request):
     if next: return redirect(next)
     return render(request, 'internal/home.html',  {"all_images": all_images}, {"all_users":all_users})
 #Explore page view function
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/login/')
 def explore(request):
     return render(request, 'internal/explore.html')
 
 
 
 #Notification page view function
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/login/')
 def notification(request):
     return render(request, 'internal/notification.html')
 
@@ -47,7 +46,7 @@ def profile(request):
 
 
 #Login page view function
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/login/')
 def upload(request):
     current_user = request.user
     p = Profile.objects.filter(id=current_user.id).first()
@@ -63,8 +62,8 @@ def upload(request):
         form =PostForm
     return render(request, 'internal/upload.html', {"form": form})
 
-#Log-Out page view function
-def logout(request):
-    return render(request, 'registration/logout.html')
+# #Log-Out page view function
+# def logout(request):
+#     return render(request, 'registration/logout.html')
 
 

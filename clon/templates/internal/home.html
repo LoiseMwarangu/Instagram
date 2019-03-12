@@ -1,4 +1,4 @@
-{% extends 'display/base.html' %} 
+{% extends 'internal/base.html' %} 
 {% load static%} 
 {% load bootstrap3 %} 
 {% block content %} 
@@ -11,10 +11,6 @@
 {% endif %}
 <div class="homebody">
     <div class="container">
-
-
-
-
 
         <div class="w3-card-6" style="width:56%">
 
@@ -46,7 +42,7 @@
 
                                 <span class="like-row">
                                     {% if liked %}
-                                    <img class"likedhrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
+                                    <img class="likedhrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
                                     <img class="likehrt" src="{% static 'images/liked.png' %}" alt="not likedpicture" class="img-responsive"> {% endif %}
                                     <img class="commenthrt" id='comment-icon' src="../../static/images/comment.png"class="img-responsive" alt=" commentImage">
                                     <img class="savehrt" src="{% static 'images/unsaved.png' %}" alt="save picture">

@@ -1,14 +1,18 @@
+
 {%extends "registration/base.html"%} {% load bootstrap3 %} {% block content %}
+<meta name="c-token" content="{!! csrf_token() !!}" />
 <div class="container">
+ 
     <div class="logincont">
         <!-- Image beside Login-Form -->
+        <div class="row"> 
         
-        <div class="loginimage">
-            <img src="../../static/images/instagrampicture2.png " alt="instagram login phone ">
+        <div class="loginimage col-md-6"  >
+            <img src="../../static/images/instagrampicture2.png " alt="instagram login phone " height="700px" width="700px">
         </div>
         
         <!-- Output to Display error in login -->
-        <div class="loginform">
+        <div class="loginform col-md-6" style="float:right;">
             {% if form.errors %}
             <p > Password or Username is incorrect </p>
             {% endif %}
@@ -16,15 +20,15 @@
         
 
             <!-- BootStrap class to add border to login form -->
-            <div  class="panel panel-default">
+            <div  class="panel panel-default col-md-6" style="float:right; margin:30px;">
 
                 <!-- Instagram image at the top of Login form -->
                 
-                    <img src="../../static/images/instalogowhite.png" alt="signuplogo " style="width:250px; height:80px;margin: 5px auto; display: block;">
+                    <img src="../../static/images/instalogowhite.png" alt="signuplogo " style="width:250px; float: right; height:80px;margin: 5px auto; display: block;">
                 
                 <!--Collaplse Instagram image at the top of Login form -->
 
-                <div class="panel-body">
+                <div class="panel-body ">
 
                     <form action="/accounts/login/" method="post">
                         {% csrf_token %} {% bootstrap_form form%}
@@ -33,11 +37,10 @@
                             <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
                         </div>
 
-                        <div class="col-xs-10"></div>
                         <h2 class="text-center">
                             <small>OR</small>
                         </h2>
-                        <div class="col-xs-2"></div>
+
 
                         <!-- Signup Button Next to (Do you have an account)! -->
                         <div class="panel-heading">
@@ -46,6 +49,7 @@
                         </div>
                         <!--Collapse Signup Button! -->
                         <input type="hidden" name="next" value="{{next}}">
+                        <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv1.0%2Fdialog%2Foauth%3Fredirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%25225d00tffr3jiw17qibex1xx5b7wrss9s0ga3z6p1dq46w9wllkmz%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26return_scopes%26force_confirmation%26client_id%3D124024574287414%26ret%3Dlogin%26logger_id%3Dce683956-9c95-8ef8-fce6-523a91316acf&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25225d00tffr3jiw17qibex1xx5b7wrss9s0ga3z6p1dq46w9wllkmz%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%23_%3D_&display=page&locale=en_GB&logger_id=ce683956-9c95-8ef8-fce6-523a91316acf">Log in with facebook</a>
 
                     </form>
 
@@ -55,30 +59,13 @@
                 
 
             </div>
-            <!-- Play Store and Apple store Images With well text to put them sidebyside! -->
-            <div class="login-playstorebtn">
-            
-            
-                <div class="googlebtn">
-            
-                    <a href="https://play.google.com/store/search?q=instagram"><img src="../../static/images/playstore.svg" alt="signuplogo " style="width:150px; height:40px "></a>
-            
-                </div>
-            
-                <div class="applebtn">
-            
-                    <a href="https://www.apple.com/us/search/instagram?src=itunes_serp"><img src="../../static/images/applestore.jpeg"  alt="signuplogo " style="width:150px; height:40px "></a>
-            
-                </div>
-            
-            </div>
-            <!--Collapse! Play Store and Apple store Images With well text to put them sidebyside! -->
-
         </div>
+
+        
 
 
     </div>
-
+</div>
            
 </div>
 

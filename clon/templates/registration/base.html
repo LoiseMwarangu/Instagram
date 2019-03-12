@@ -2,12 +2,9 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
     <title>Instaclone</title>
@@ -15,24 +12,41 @@
         {% bootstrap_css%} 
     {% endblock %}
 </head>
-
 <body>
-
-
-
     <div class="container-fluid" id="body">
         {% block content %} 
         {%include "registration/navbar.html" %}
         
         {% endblock %}
     </div>
-
-
      {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     {% bootstrap_javascript %} 
     {% endblock %}
+    <div class="regplaystorebtn">
 
+
+        <div class="googlebtn">
+    
+            <a href="https://play.google.com/store/search?q=instagram">
+                <img src="../../static/images/playstore.svg" alt="signuplogo " style="width:150px; height:40px ">
+            </a>
+    
+        </div>
+    
+        <div class="applebtn">
+    
+            <a href="https://www.apple.com/us/search/instagram?src=itunes_serp">
+                <img src="../../static/images/applestore.jpeg" alt="signuplogo " style="width:150px; height:40px ">
+            </a>
+    
+        </div>
+    
+    </div>
+    <!--Collapse! Play Store and Apple store Images With well text to put them sidebyside! -->
+    
+        </div>
+    </div>
 </body>
 
 </html>

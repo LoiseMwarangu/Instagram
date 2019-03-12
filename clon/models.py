@@ -17,7 +17,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.profile.user
-
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
 
 
 class Image(models.Model):
@@ -30,8 +34,6 @@ class Image(models.Model):
 
     def __str__(self):
         return self.image_caption
-
-
 
 
 

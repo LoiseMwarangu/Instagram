@@ -1,4 +1,4 @@
-{% extends 'internal/base.html' %} 
+{% extends 'display/base.html' %} 
 {% load static%} 
 {% load bootstrap3 %} 
 {% block content %} 
@@ -12,32 +12,41 @@
 <div class="homebody">
     <div class="container">
 
+
+
+
+
         <div class="w3-card-6" style="width:56%">
 
             <div class="container">
-                {% if all_images %} {% for loises in all_images %}
+                {% if all_images %} {% for user in all_images %}
 
                 <div class="imagepadding">
 
                     <div class="panel panel-primary">
+
+
+                        
                         <p class="usernamehome-dp">
                             <img src="{% static 'images/pic3.jpg' %}" class="circlehome-dp" alt="signuplogo ">
                          {% if all_users %} {% for user in all_users %}
                             <strong> "{{user.user}}" </strong>
                         {% endfor %}{% else %}
-                        <strong>i am a programmer</strong>
+                        <strong>grammer</strong>
 
                         {% endif %}
                         </p>
-                        <a href="{{ loises.image }}" data-lightbox="gallery">
-                            <img src="{{ loises.image.url }}" class="img-responsive" style="width:100%;margin-left: 0%;margin-top:15px; ">
+                       
+                        <a href="{{ user.image }}" data-lightbox="gallery">
+                            <img src="{{ user.image.url }}" class="img-responsive" style="width:100%;margin-left: 0%;margin-top:15px; ">
                         </a>
+
                         <div class="container">
                             <div class='likesect'>
 
                                 <span class="like-row">
                                     {% if liked %}
-                                    <img class="likehrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
+                                    <img class"likedhrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
                                     <img class="likehrt" src="{% static 'images/liked.png' %}" alt="not likedpicture" class="img-responsive"> {% endif %}
                                     <img class="commenthrt" id='comment-icon' src="../../static/images/comment.png"class="img-responsive" alt=" commentImage">
                                     <img class="savehrt" src="{% static 'images/unsaved.png' %}" alt="save picture">
@@ -45,11 +54,10 @@
                                     </p>
                                 </span>
                                 <p><strong>5 likes</strong> </p>
-                        <!-- Caption Section -->
                         {% if all_users %} {% for user in all_users %}
                         <strong> "{{user.user}}" </strong>
                         {% endfor %}{% else %}
-                        <p><strong>grammer</strong> {{loises.image_caption}}</p>
+                        <p><strong>grammer</strong> {{user.image_caption}}</p>
                         
                         {% endif %} 
 
@@ -76,39 +84,3 @@
     </div>
 </div>
 {% endblock %}
-<style>
-
-.homebody{
-       margin-top: 13%;
-       margin-left: 25%;
-
-     }
-
-     .navbar-fixed-bottom{
-         display: none;
-     }
-
-
-     .panel-primary{
-       width: 56%;
-       border-color: rgb(216, 209, 209)!important;
-     }
-
-     .imagepadding{
-         padding-bottom: 70px;
-     }
-
-     /* Home Profile pic above post */
-
-     .usernamehome-dp{
-         font-size: 15px;
-         margin-top: 15px;
-         margin-left: 3%;
-     }
-     
-     .circlehome-dp{
-         height: 32px;
-         width: 32px;
-         border-radius: 100%;
-     }
-     </style>

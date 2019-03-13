@@ -1,17 +1,16 @@
 ## Instaclone
-An application that works exactly like instagram.
-
-### Getting Started
-The user needs to access the reposit
+An application that works exactly like instagram.Users can post images and have them commented on and liked
 ### Prerequisites
+The user needs an internet connection and a link to access the proejct's repository
+### Getting Started
 -Internet connection
-
 -webpage URL:
--Acess the project using my github link :
+
+-Access the project using my github link :https://github.com/LoiseMwarangu/instagram
 
 -git clone project.
 
--install dependancies in requirements.txt file pip install -r requirements.txt
+-install dependancies in requirements.txt file using pip install -r requirements.txt
 
 -cd into project
 
@@ -21,51 +20,27 @@ The user needs to access the reposit
 
 -Run The Project-: ($ python manage.py runserver)
 
-#BDD
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
+# User stories
+* Create an account and confirm through email verification.
+* Sign in to the application to start using.
+* Upload pictures to the application and edit their profile.
+* See their profile with all their uploaded pictures.
+* Follow other users and see their pictures on the timeline.
+* Like a picture and leave a comment on it.
 
-Say what the step will be
+# BDD
 
-Give the example
-And repeat
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
 
-Running the tests
-Explain how to run the automated tests for this system
+## Built With
+Django
+HTML
+CSS
+Bootstrap3
 
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-
-Built With
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
-Authors
-Billie Thompson - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
-
-License
+###Author
+Loise Mwarangu 
+Github link : https://github.com/LoiseMwarangu
+# License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc

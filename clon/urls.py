@@ -1,27 +1,18 @@
 from django.conf.urls import url
 from . import views
-from django.conf import settings
 from django.conf.urls.static import static
-from django.shortcuts import render, redirect
-
-
+from django.conf import settings
 
 urlpatterns=[
-    #homepage
-    url('^$',views.register, name='index'),
-    #login url
-    url(r'^login/$',views.login,name ='login'),
-    #logout url
-    url(r'^logout/$',views.logout,{'next_page': 'accounts:login'}, name='logout'),
-    url(r'^explore/$',views.explore,name ='explore'),   
-    #Notification url 
-    url(r'^notification/$',views.notification,name ='notification'),
-    #profile page url 
-    url(r'^profile/$',views.profile,name ='profile'),
-    #url to upload pictures 
-    url(r'^upload/$',views.upload,name ='upload'),
+    url(r'^$',views.login,name='login'),
+    url(r'^search/$', views.search_users, name='search_users'),
+    url(r'^image/(\d+)$',views.image,name ='image'),
+    url(r'^users/$', views.user_list, name = 'user_list'),
+    url(r'^upload$', views.newimage, name='new_image'),
+    url(r'^edit$', views.edit_profile, name='edit_profile'),
 
+    url(r'^profile/(?P<username>[0-9]+)$', views.individual_profile_page, name='individual_profile_page'),
 ]
-if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

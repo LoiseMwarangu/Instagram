@@ -1,24 +1,27 @@
+from .models import Image, Review, Profile
 from django import forms
-from .models import *
-from django.contrib.auth.models import User
-
-class PostForm(forms.ModelForm):
-  class Meta:
-    model = Image
-    fields = ('image_caption', 'image', 'tag_someone',)
-
-class SignUpForm(forms.ModelForm):
-  class Meta:
-    model = Profile
-    exclude = ['bio','profile_pic','profile_avatar','date']
+from django.forms import ModelForm, Textarea, IntegerField
 
 
-class CommentForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['comment_post'].widget=forms.TextInput()
-        self.fields['comment_post'].widget.attrs['placeholder']='comment...'
-
+class NewImageForm(forms.ModelForm):
     class Meta:
-        model = Comments
-        fields = ('comment_post',)
+        model = Image
+        exclude = ['user', 'likes']
+
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+
+        model = Review
+        fields = ('comment',)
+
+class UpdatebioForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user', 'followers', 'following']
+
+
+class PostForm(forms.Form):
+    your_name = forms.CharField(label='First Name',max_length=30)
+    email = forms.EmailField(label='Email')

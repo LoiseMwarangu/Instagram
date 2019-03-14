@@ -103,7 +103,7 @@ def new_image(request):
 
     else:
         form = NewImageForm()
-    return render(request, 'registration/new_image.html', {"form": form})
+    return render(request, 'registration/newimage.html', {"form": form})
 
 # Viewing a single picture
 
@@ -135,7 +135,7 @@ def individual_profile_page(request, username=None):
     # images by user id
     images = Image.objects.filter(user_id=username)
 
-    return render (request, 'registration/user_image_list.html', {'images':images, 'username': username})
+    return render (request, 'registration/userlist.html', {'images':images, 'username': username})
 
 def search_users(request):
 

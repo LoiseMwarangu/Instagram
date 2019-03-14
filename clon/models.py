@@ -1,9 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-import datetime
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
+# Create your models here.
+import datetime as dt
 
 
 class Profile(models.Model):
@@ -11,9 +10,9 @@ class Profile(models.Model):
         db_table = 'profile'
 
     bio = models.TextField(max_length=200, null=True, blank=True, default="bio")
-    profilepic = models.ImageField(upload_to='ppic/', null=True, blank=True)
+    profilepic = models.ImageField(upload_to='picture/', null=True, blank=True)
     user=models.OneToOneField(User, on_delete=models.CASCADE, blank=True, related_name="profile")
-    followers = models.ManyToManyField(User, related_name="followers", blank=False)
+    followers = models.ManyToManyField(User, related_name="followers", blank=True)
     following = models.ManyToManyField(User, related_name="following", blank=True)
 
     def save_profile(self):
@@ -81,9 +80,9 @@ class tags(models.Model):
 
 class Image(models.Model):
     image=models.ImageField(upload_to='picture/', )
-    name = models.CharField(max_length=40, default=True,)
-    user = models.ForeignKey(User, on_delete=models.CASCADE,default=True, blank=True, related_name="images")
-    description=models.TextField( blank=True)
+    name = models.CharField(max_length=40)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, related_name="images")
+    description=models.TextField()
     location=models.ForeignKey(Location, null=True)
     tags=models.ManyToManyField(tags, blank=True)
     likes = models.IntegerField(default=0)
@@ -131,7 +130,9 @@ class Image(models.Model):
         return pictures
 
 class Followers(models.Model):
-
+    '''
+    followers
+    '''
     user = models.CharField(max_length=20, default="")
     follower = models.CharField(max_length=20, default="")
 
@@ -168,8 +169,3 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ("user", "image", "value")
-
-    
-
-
-

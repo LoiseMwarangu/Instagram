@@ -1,32 +1,48 @@
-{% load bootstrap4 %} 
-{% load staticfiles %}
+{% load bootstrap4 %} {% load static%}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+<html>
 
-    <title>Instaclone</title>
-    {% block styles%} 
-        {% bootstrap_css%} 
-    {% endblock %}
+<head>
+  <meta charset="utf-8"> {% if title %}
+  <title> Image Gallery - {{title}}</title>
+  {% else %}
+  <title> The Image Gallery </title>
+  {% endif %} {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/baseimages.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  {% endblock %}
+  <script>
+    UPLOADCARE_PUBLIC_KEY = 'df395ec05519685a8920';
+  </script>
+
 </head>
+
 <body>
-    <div class="container" id="body">
-        {% block content %} 
-        {%include "registration/navbar.html" %}
-        
-        {% endblock %}
-    </div>
-     {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    {% bootstrap_javascript %} 
-    {% endblock %}
-    
-        </div>
-    </div>
+  {% include "navbar.html" %} {% block content %}
+  <h1 class='text-center'> Images for Today </h1> {%endblock%} {% block scripts %}
+  <a href="https://play.google.com/store/search?q=instagram">
+    <img src="../../static/images/playstore.svg" alt="signuplogo " style="width:150px; height:40px ">
+</a>
+
+
+&nbsp;
+
+
+<a href="https://www.apple.com/us/search/instagram?src=itunes_serp">
+    <img src="../../static/images/applestore.jpeg" alt="signuplogo " style="width:150px; height:40px ">
+</a>
+
+
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ucarecdn.com/libs/widget/3.6.1/uploadcare.min.js" charset="utf-8"></script>
+  {% bootstrap_javascript %} {% endblock %}
+
+
+
 </body>
 
 </html>
-

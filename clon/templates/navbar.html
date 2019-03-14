@@ -1,0 +1,103 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .navbar .logo-section {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo-section div {
+      align-self: stretch;
+      width: 1px;
+      background: black;
+      margin: 0 20px;
+    }
+    .navbar .icons-section .far {
+      text-decoration: none;
+      color: inherit;
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+    .navbar .logo {
+      width: 40px;
+    }
+    .navbar .logoname {
+      width: 130px;
+    }
+    .navbar .input-search {
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      border: 2px solix #ddd;
+      outline: 0;
+    }
+    .navbar .input-search:focus {
+      text-align: left;
+    }
+    
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  
+        <nav class="navbar">
+            <section class="logo-section"><a href="/"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" /></a>
+                <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" />
+            </section>
+            
+            <form class="search-section" role="search" action="{% url 'search_users' %}">
+                <input class="input-search" type="search" name="user" placeholder="Search">
+            </form>
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                
+                        <li>
+                            <a href="/">
+                                <i class="material-icons"> explore </i></a>
+                        </li>
+                        <li>
+                            <a href="{url 'home_images'}">
+                                <i class="material-icons">
+                                    favorite_border
+                                    </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'new_image' %}">
+                                <i class="material-icons" style="font-size:25px;">add_a_photo</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'myprofile' %">
+                                <i class="material-icons" style="font-size:25px">account_circle</i>
+                            </a>
+                        </li>
+                        <li>                <a class="fa fa-user" href="/logout" style="font-size:16px; color:yellow;">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        
+        
+            </div>
+
+        </nav>
+
+    </div>
+</body>
+
+</html>

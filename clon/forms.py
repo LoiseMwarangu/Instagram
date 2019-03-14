@@ -9,7 +9,6 @@ class NewImageForm(forms.ModelForm):
         exclude = ['user', 'likes']
 
 
-
 class ReviewForm(forms.ModelForm):
     class Meta:
 
@@ -22,6 +21,6 @@ class UpdatebioForm(forms.ModelForm):
         exclude = ['user', 'followers', 'following']
 
 
-class PostForm(forms.Form):
+class NewsLetterForm(forms.Form):
     your_name = forms.CharField(label='First Name',max_length=30)
     email = forms.EmailField(label='Email')

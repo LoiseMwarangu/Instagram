@@ -1,12 +1,8 @@
 from django.contrib import admin
+# from django.contrib.auth.models import User
+from .models import Image,tags, Profile, Review, NewsLetterRecipients, Like
 
-from .models import Location,tags, Image, Profile
-
-
-class ImageAdmin(admin.ModelAdmin):
-    filter_horizontal = ('tags',)
-
-admin.site.register(Location)
-admin.site.register(tags)
-admin.site.register(Image, ImageAdmin)
+admin.site.register(Image)
 admin.site.register(Profile)
+admin.site.register(Review)
+

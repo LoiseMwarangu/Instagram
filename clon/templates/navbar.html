@@ -25,29 +25,30 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                 
-                        <li>
-                            <a href="/">
+                    
+                            <a href="{% url 'images' %}">
                                 <i class="material-icons"> explore </i></a>
-                        </li>
-                        <li>
-                            <a href="/home">
+                      
+                      &nbsp;  &nbsp;
+                            <a href="{% url 'images' %}">
                                 <i class="material-icons">
                                     favorite_border
                                     </i>
                             </a>
-                        </li>
-                        <li>
+                      
+                            &nbsp;  &nbsp;
+
                             <a href="{% url 'new_image' %}">
                                 <i class="material-icons" style="font-size:25px;">add_a_photo</i>
                             </a>
-                        </li>
-                        <li>
+
+                            &nbsp;  &nbsp;
                             <a href="individual_profile_page/">
                                 <i class="material-icons" style="font-size:25px">account_circle</i>
                             </a>
-                        </li>
-                        <li>                <a class="fa fa-user" href="/accounts/login" style="font-size:16px; color:yellow;">Logout</a>
-                        </li>
+                            &nbsp; &nbsp; 
+       
+                      
                     </ul>
                 </div>
 

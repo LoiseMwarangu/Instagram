@@ -105,7 +105,6 @@ def new_image(request):
         form = NewImageForm()
     return render(request, 'registration/newimage.html', {"form": form})
 
-# Viewing a single picture
 
 def user_list(request):
     user_list = User.objects.all()
@@ -127,6 +126,13 @@ def edit_profile(request):
     else:
         form = UpdatebioForm()
     return render(request, 'registration/edit_profile.html', {"form": form})
+
+
+
+@login_required(login_url='/accounts/login/')
+def images(request):
+    images=Image.objects.all()
+    return render (request, 'allimage.html' ,{"images":images})
 
 @login_required(login_url='/accounts/login/')
 def individual_profile_page(request, username=None):

@@ -4,7 +4,7 @@ An application that works exactly like instagram.Users can post images and have 
 The user needs an internet connection and a link to access the proejct's repository
 ### Getting Started
 -Internet connection
--webpage URL:
+-webpage URL:https://loiseinsta.herokuapp.com/
 
 -Access the project using my github link :https://github.com/LoiseMwarangu/instagram
 
@@ -33,12 +33,12 @@ The user needs an internet connection and a link to access the proejct's reposit
 
 
 ## Built With
-Django
-HTML
-CSS
-Bootstrap3
+* Django
+* HTML
+* CSS
+* Bootstrap3
 
-###Author
+### Author
 Loise Mwarangu 
 Github link : https://github.com/LoiseMwarangu
 # License
